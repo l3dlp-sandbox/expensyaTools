@@ -35,6 +35,12 @@ export class NavService {
             iconName: "warning",
             route: "appinsight/exceptions",
             children: []
+          },
+          {
+            displayName: "Query",
+            iconName: "create",
+            route: "appinsight/query",
+            children: []
           }
         ]
       }
