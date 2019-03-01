@@ -54,14 +54,9 @@ export class ExceptionsListComponent implements OnInit {
           this.exceptionsList
         );
         this.dataSource.filterPredicate = (data: AppInsight, filter) => {
-          const dataStr =
-            data.id +
-            data.timestamp +
-            data.ai.appName +
-            data.cloud.roleInstance +
-            data.cloud.roleName +
-            data.exception.type +
-            data.exception.method;
+          const dataStr = this.exceptionsFiltersService.getAllParamsAsString(
+            data
+          );
           return (
             dataStr
               .trim()
