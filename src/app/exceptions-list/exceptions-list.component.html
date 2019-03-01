@@ -77,6 +77,7 @@
   <app-loader></app-loader>
 
   <mat-paginator
+    [disabled]="shouldDisablePagination()"
     [pageSizeOptions]="[15, 20, 30, 40, 50]"
     showFirstLastButtons
   ></mat-paginator>

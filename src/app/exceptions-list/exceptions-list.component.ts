@@ -45,6 +45,14 @@ export class ExceptionsListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  shouldDisablePagination(): boolean {
+    return (
+      isNullOrUndefined(this.exceptionsList) ||
+      this.exceptionsList.length == 0 ||
+      isNullOrUndefined(this.dataSource.data)
+    );
+  }
+
   getLastExceptionsAndInitTable(period: DateRange) {
     this.dataSource = new MatTableDataSource<AppInsight>(null);
     this.appInsightService.getLastExceptions(period).subscribe(data => {
