@@ -74,6 +74,8 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 
+  <app-loader></app-loader>
+
   <mat-paginator
     [pageSizeOptions]="[15, 20, 30, 40, 50]"
     showFirstLastButtons

@@ -1,7 +1,5 @@
 <div [class.hidden]="!show">
-  <div class="loader-overlay">
-    <div *ngIf="show">
-      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    </div>
+  <div *ngIf="show" class="spinner">
+    <img src="../../assets/img/spinner.svg" class="spiner-img" />
   </div>
 </div>

@@ -6,8 +6,8 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 export class ConfigService {
   public headers: HttpHeaders;
   private appInsightUrl: string =
-    "https://api.applicationinsights.io/v1/apps/AppId/"; //Replace AppId by your app id
-  private apiKey: string = "APIKEY"; //Replace by your api key
+    "https://api.applicationinsights.io/v1/apps/60afb5e0-dc62-48e5-84d5-99f1e3e9d670/";
+  private apiKey: string = "5y7rnqntsve7eo311x1mj6jhxb3if3gk35kfwrqp";
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders()

@@ -5,6 +5,8 @@ import { AppInsight } from "../models/app-insight";
 import { ConfigService } from "../services/config.service";
 import { ExceptionsFiltersService } from "../services/exceptions-filters.service";
 import { DateRange } from "../models/date-range.enum";
+import { isEmpty } from "rxjs/operators";
+import { isNullOrUndefined } from "util";
 
 @Component({
   selector: "app-exceptions-list",
@@ -44,6 +46,7 @@ export class ExceptionsListComponent implements OnInit {
   }
 
   getLastExceptionsAndInitTable(period: DateRange) {
+    this.dataSource = new MatTableDataSource<AppInsight>(null);
     this.appInsightService.getLastExceptions(period).subscribe(data => {
       if (data != null) {
         this.exceptionsList = data.value;
